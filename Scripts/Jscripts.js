@@ -31,6 +31,13 @@ const personalMovieDB = {
     privat: false
 };
 
+function showDB(){
+    if (personalMovieDB[privat] == false){
+        console.log(personalMovieDB);
+    } 
+}
+//showDB();
+
 for (let i = 1; i <= numberOfMovies; i++){
     let a = prompt("Название фильма" , ""), b = +prompt("Ваша оценка" , "");
         if (a != '' && b != '' && a!= null && b != null && a.length < 50 && b <= 10){
@@ -42,4 +49,4 @@ for (let i = 1; i <= numberOfMovies; i++){
         }
 }
 
-console.log(personalMovieDB);
+//console.log(personalMovieDB);
