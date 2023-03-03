@@ -1,6 +1,5 @@
 "use strict"
-const numberOfMovies = +prompt("Сколько фильмов вы уже посмотрели?","");
-if (numberOfMovies <=10){
+/* if (numberOfMovies < 10){
     alert ('Нормальный человек, фильмы для овощей');
     
 } else if (numberOfMovies >= 10 && numberOfMovies <= 30){
@@ -9,7 +8,19 @@ alert ('Еще не все потеряно! Время остановиться
     alert ('Вась не спасти, вы амеба');
 } else {
     alert ('Error');
+} */
+
+let numberOfMovies;
+
+function start() {
+    numberOfMovies = +prompt("Сколько фильмов вы уже посмотрели?","");
+
+    while (numberOfMovies == '' || numberOfMovies == null || isNaN(numberOfMovies)){
+        numberOfMovies = +prompt("Сколько фильмов вы уже посмотрели?","");
+    }
 }
+
+start();
 
 const personalMovieDB = {
     count: numberOfMovies,
