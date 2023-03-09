@@ -20,7 +20,41 @@ function start() {
     }
 }
 
+/* function showDB(){
+    if (personalMovieDB[privat] == false){
+        console.log(personalMovieDB);
+    } 
+} */
+
+function rememberMyMovies(){
+    for (let i = 1; i <= numberOfMovies; i++){
+        let a = prompt("Название фильма" , ""), b = +prompt("Ваша оценка" , "");
+            if (a != '' && b != '' && a!= null && b != null && a.length < 50 && b <= 10){
+                console.log('OK');
+                personalMovieDB.movies[a] = b;
+            } else {
+                console.log('error: wrong type');
+                i--;
+            }
+    }
+}
+
+function fanLevel(){
+    if (numberOfMovies < 10){
+        alert ('Любитель');
+        
+    } else if (numberOfMovies >= 10 && numberOfMovies <= 30){
+    alert ('Фанат');
+    } else if(numberOfMovies >30) {
+        alert ('Фанатик');
+    } else {
+        alert ('error: smthing gone wrong');1
+    }
+
+}
+
 start();
+fanLevel();
 
 const personalMovieDB = {
     count: numberOfMovies,
@@ -31,22 +65,5 @@ const personalMovieDB = {
     privat: false
 };
 
-function showDB(){
-    if (personalMovieDB[privat] == false){
-        console.log(personalMovieDB);
-    } 
-}
-//showDB();
-
-for (let i = 1; i <= numberOfMovies; i++){
-    let a = prompt("Название фильма" , ""), b = +prompt("Ваша оценка" , "");
-        if (a != '' && b != '' && a!= null && b != null && a.length < 50 && b <= 10){
-            console.log('OK');
-            personalMovieDB.movies[a] = b;
-        } else {
-            console.log('error');
-            i--;
-        }
-}
-
-//console.log(personalMovieDB);
+rememberMyMovies();
+// console.log(personalMovieDB);
