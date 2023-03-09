@@ -1,14 +1,4 @@
 "use strict"
-/* if (numberOfMovies < 10){
-    alert ('Нормальный человек, фильмы для овощей');
-    
-} else if (numberOfMovies >= 10 && numberOfMovies <= 30){
-alert ('Еще не все потеряно! Время остановиться!');
-} else if(numberOfMovies >30) {
-    alert ('Вась не спасти, вы амеба');
-} else {
-    alert ('Error');
-} */
 
 let numberOfMovies;
 
@@ -20,11 +10,11 @@ function start() {
     }
 }
 
-/* function showDB(){
-    if (personalMovieDB[privat] == false){
+function showDB(hidden){
+    if (!hidden){
         console.log(personalMovieDB);
-    } 
-} */
+    }
+} 
 
 function rememberMyMovies(){
     for (let i = 1; i <= numberOfMovies; i++){
@@ -53,8 +43,17 @@ function fanLevel(){
 
 }
 
-start();
-fanLevel();
+function writeYourGenres(){
+    for (let i = 1; i < 4; i++){
+    let a = prompt(`Ваш любимый жанр под номером ${i}` , "");
+    personalMovieDB.genres[i - 1] = a;
+    }
+}
+
+// Сама программа
+
+//start();
+//fanLevel();
 
 const personalMovieDB = {
     count: numberOfMovies,
@@ -62,8 +61,9 @@ const personalMovieDB = {
     },
     actors: {},
     genres: [],
-    privat: false
+    private: false
 };
 
-rememberMyMovies();
-// console.log(personalMovieDB);
+//rememberMyMovies();
+writeYourGenres();
+showDB(personalMovieDB.private);
